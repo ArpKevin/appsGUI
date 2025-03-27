@@ -10,7 +10,7 @@ namespace appsGUI
     public class AppObject
 
     {
-        public AppObject(string appName, Category category, ContentRating contentRating, double rating, int reviews, string currentVer, string updateYear, string updateMonth, int id)
+        public AppObject(string appName, Category category, ContentRating contentRating, double rating, int reviews, string currentVer, string updateYear, string updateMonth)
         {
             AppName = appName;
             Category = category;
@@ -20,7 +20,6 @@ namespace appsGUI
             CurrentVer = currentVer;
             UpdateYear = updateYear;
             UpdateMonth = updateMonth;
-            Id = id;
         }
 
         public string AppName { get; set; }
@@ -31,14 +30,10 @@ namespace appsGUI
         public string CurrentVer { get; set; }
         public string UpdateYear { get; set; }
         public string UpdateMonth { get; set; }
-        public int Id { get; set; }
 
         public static List<AppObject> LoadFromCsv(string path)
         {
             List<AppObject> apps = new List<AppObject>();
-
-
-            int i = 0;
             foreach (var item in File.ReadAllLines(path).Skip(1))
             {
                 var x = item.Split(";");
@@ -51,10 +46,8 @@ namespace appsGUI
                     int.Parse(x[6]),
                     x[7],
                     x[8],
-                    x[9],
-                    i
+                    x[9]
                     ));
-                i++;
             }
 
 
@@ -63,7 +56,7 @@ namespace appsGUI
 
         public override string ToString()
         {
-            return $"{Id} {AppName} {getRating(Rating)}";
+            return $"{AppName} {getRating(Rating)}";
         }
         public string getRating(double rating)
         {

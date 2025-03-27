@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Label Content="Válasszon kategóriát" HorizontalAlignment="Left" Margin="85,59,0,0" VerticalAlignment="Top">
+        </Label>
+        <Label Content="Válasszon alkalmazást" HorizontalAlignment="Left" Margin="516,59,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="kategoriakListbox" Margin="42,116,523,47" SelectionChanged="kategoriakListbox_SelectionChanged"/>
+        <ComboBox x:Name="kategoriaElemeiCombobox" HorizontalAlignment="Left" Margin="386,100,0,0" VerticalAlignment="Top" Width="349" SelectionChanged="kategoriaElemeiCombobox_SelectionChanged"/>
+        <Label x:Name="versionNumberLabel" Content="" HorizontalAlignment="Left" Margin="412,157,0,0" VerticalAlignment="Top"/>
+        <Label FontWeight="Bold" Content="Tartalombesorolás" HorizontalAlignment="Left" Margin="412,199,0,0" VerticalAlignment="Top"/>
+        <Label FontWeight="Bold" Content="Megtekintések" HorizontalAlignment="Left" Margin="412,294,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="categorizationLabel" Content="" HorizontalAlignment="Left" Margin="407,252,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="viewLabel" Content="" HorizontalAlignment="Left" Margin="407,346,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="confirmButton" Content="Kérem az ajánlatot!" HorizontalAlignment="Left" Margin="550,400,0,0"
+        VerticalAlignment="Top" Width="100" IsEnabled="False" Click="confirmButton_Click"/>
     </Grid>
 </Window>
